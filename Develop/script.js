@@ -1,5 +1,5 @@
 // Assignment code here -  Name all veriables
-var symbols = '!"#$%&()*+,-./:;<>=?@[]{}\~';
+var special = '!"#$%&()*+,-./:;<>=?@[]{}\~';
 var numbers = [0,1,2,3,4,5,6,7,8,9];
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -11,7 +11,6 @@ var useLowercase = false;
 var useUppercase = false;
 
 // Prompts for user 
-
 while (passwordLength < 8 || passwordLength > 128) {
   passwordLength.raw - prompt ("How long would you like the password to be? Choose a length between 8 and 128 characters.");
   passwordLength = +passwordLength.raw;
@@ -22,14 +21,7 @@ var wantNumbers = prompt("Would you like to include numbers?");
 var wantLowercase = prompt("Would you like to include lowercase letters?");
 var wantUppercase = prompt("Would you like to include uppercase letters?");
 
-wantSpecial = wantSpecial.toLowerCase();
-wantNumbers = wantNumbers.toLowerCase();
-wantLowercase = wantSpecial.toLowerCase();
-wantUppercase = wantSpecial.toLowerCase();
-
-
 //Conditionals for prompt answers - boolean
-
 if (wantSpecial === "yes") {
  useSpecial = true;
 };
@@ -41,14 +33,13 @@ if (wantLowercase === "yes") {
 };
 if (wantUppercase === "yes") {
   useUppercase = true;
-};
+}
 
 var passwordChoices = "";
 
 //Conditionals for prompt answers - responses if selected
-
 if (useSpecial === true){
-  passwordChoices += symbols;
+  passwordChoices += special;
 }
 if (useNumbers === true){
   passwordChoices += numbers;
