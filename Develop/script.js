@@ -11,6 +11,7 @@ var useLowercase = false;
 var useUppercase = false;
 
 // Prompts for user 
+
 while (passwordLength < 8 || passwordLength > 128) {
   passwordLength.raw - prompt ("How long would you like the password to be? Choose a length between 8 and 128 characters.");
   passwordLength = +passwordLength.raw;
@@ -21,18 +22,24 @@ var wantNumbers = prompt("Would you like to include numbers?");
 var wantLowercase = prompt("Would you like to include lowercase letters?");
 var wantUppercase = prompt("Would you like to include uppercase letters?");
 
+wantSpecial = wantSpecial.toLowerCase();
+wantNumbers = wantNumbers.toLowerCase();
+wantLowercase = wantSpecial.toLowerCase();
+wantUppercase = wantSpecial.toLowerCase();
+
+
 //Conditionals for prompt answers - boolean
 
-if (wantSpecial --- "yes") {
+if (wantSpecial === "yes") {
  useSpecial = true;
 };
-if (wantNumbers --- "yes") {
+if (wantNumbers === "yes") {
   useNumbers = true;
 };
-if (wantLowercase --- "yes") {
+if (wantLowercase === "yes") {
   useLowercase = true;
 };
-if (wantUppercase --- "yes") {
+if (wantUppercase === "yes") {
   useUppercase = true;
 };
 
@@ -40,21 +47,21 @@ var passwordChoices = "";
 
 //Conditionals for prompt answers - responses if selected
 
-if (useSpecial == true){
+if (useSpecial === true){
   passwordChoices += symbols;
 }
-if (useNumbers == true){
+if (useNumbers === true){
   passwordChoices += numbers;
 }
-if (useLowercase == true){
-  passwordChoices += lowerCase;
+if (useLowercase === true){
+  passwordChoices += lowercase;
 }
-if (useUppercase == true){
-  passwordChoices +- uppercase;
+if (useUppercase === true){
+  passwordChoices += uppercase;
 }
 
 function randomChars(passwordLength) {
-  return Math.floor(Math.random()*(passwordLength)+1);
+  return Math.floor(Math.random() * passwordLength +1);
 }
 
 function generatePassword(){
@@ -72,7 +79,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password 
+  passwordText.value = password;
 }
   
 
