@@ -1,6 +1,6 @@
 // Assignment code here -  Name all veriables
 var special = '!"#$%&()*+,-./:;<>=?@[]{}\~';
-var numbers = [0,1,2,3,4,5,6,7,8,9];
+var numbers = "0,1,2,3,4,5,6,7,8,9;"
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var passwordLength = 0;
@@ -9,6 +9,7 @@ var useSpecial = false;
 var useNumbers= false; 
 var useLowercase = false;
 var useUppercase = false;
+var passwordChoices = "";
 
 // Prompts for user 
 while (passwordLength < 8 || passwordLength > 128) {
@@ -38,21 +39,19 @@ if (wantLowercase === "yes") {
 };
 if (wantUppercase === "yes") {
   useUppercase = true;
-}
-
-var passwordChoices = "";
+};
 
 //Conditionals for prompt answers - responses if selected
-if (useSpecial === true){
+if (useSpecial == true){
   passwordChoices += special;
 }
-if (useNumbers === true){
+if (useNumbers == true){
   passwordChoices += numbers;
 }
-if (useLowercase === true){
+if (useLowercase == true){
   passwordChoices += lowercase;
 }
-if (useUppercase === true){
+if (useUppercase == true){
   passwordChoices += uppercase;
 }
 
