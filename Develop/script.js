@@ -21,6 +21,11 @@ var wantNumbers = prompt("Would you like to include numbers?");
 var wantLowercase = prompt("Would you like to include lowercase letters?");
 var wantUppercase = prompt("Would you like to include uppercase letters?");
 
+wantSpecial = wantSpecial.toUpperCase();
+wantNumbers = wantNumbers.toUpperCase();
+wantLowercase = wantLowercase.toUpperCase();
+wantUppercase = wantUppercase.toUpperCase();
+
 //Conditionals for prompt answers - boolean
 if (wantSpecial === "yes") {
  useSpecial = true;
@@ -73,6 +78,5 @@ function writePassword() {
   passwordText.value = password;
 }
   
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
