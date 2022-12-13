@@ -13,7 +13,7 @@ var passwordChoices = "";
 
 // Prompts for user 
 while (passwordLength < 8 || passwordLength > 128) {
-  passwordLength = prompt ("How long would you like the password to be? Choose a length between 8 and 128 characters.");
+  passwordLength = window.prompt ("How long would you like the password to be? Choose a length between 8 and 128 characters.");
   passwordLength = passwordLength.isInteger;
 }
 
@@ -50,13 +50,13 @@ if (useUppercase === true){
   passwordChoices += uppercase;
 }
 
-function randomChars(passwordLength) {
+function randomCharacters(passwordLength) {
   return Math.floor(Math.random() * passwordLength +1);
 }
 
 function generatePassword(){
 for(var i=0; i < passwordLength; i+= 1) password += i; {
-  password += passwordChoices[randomChars(passwordChoices.length)]
+  password += passwordChoices[randomCharacters(passwordChoices.length)];
 }
 return password;
 }
