@@ -13,8 +13,8 @@ var passwordChoices = "";
 
 // Prompts for user 
 while (passwordLength < 8 || passwordLength > 128) {
-  passwordLength.raw - prompt ("How long would you like the password to be? Choose a length between 8 and 128 characters.");
-  passwordLength = +passwordLength.raw;
+  passwordLength = prompt ("How long would you like the password to be? Choose a length between 8 and 128 characters.");
+  passwordLength = passwordLength.isInteger;
 }
 
 var wantSpecial = prompt("Would you like to include special characters?");
@@ -22,36 +22,31 @@ var wantNumbers = prompt("Would you like to include numbers?");
 var wantLowercase = prompt("Would you like to include lowercase letters?");
 var wantUppercase = prompt("Would you like to include uppercase letters?");
 
-wantSpecial = wantSpecial.toUpperCase();
-wantNumbers = wantNumbers.toUpperCase();
-wantLowercase = wantLowercase.toUpperCase();
-wantUppercase = wantUppercase.toUpperCase();
-
 //Conditionals for prompt answers - boolean
 if (wantSpecial === "yes") {
- useSpecial = true;
+  useSpecial == true;
 };
 if (wantNumbers === "yes") {
-  useNumbers = true;
+  useNumbers == true;
 };
 if (wantLowercase === "yes") {
-  useLowercase = true;
+  useLowercase == true;
 };
 if (wantUppercase === "yes") {
-  useUppercase = true;
+  useUppercase == true;
 };
 
 //Conditionals for prompt answers - responses if selected
-if (useSpecial == true){
+if (useSpecial === true){
   passwordChoices += special;
 }
-if (useNumbers == true){
+if (useNumbers === true){
   passwordChoices += numbers;
 }
-if (useLowercase == true){
+if (useLowercase === true){
   passwordChoices += lowercase;
 }
-if (useUppercase == true){
+if (useUppercase === true){
   passwordChoices += uppercase;
 }
 
@@ -60,7 +55,7 @@ function randomChars(passwordLength) {
 }
 
 function generatePassword(){
-for(var i=0; i < passwordLength; 1+- 1) {
+for(var i=0; i < passwordLength; i+= 1) password += i; {
   password += passwordChoices[randomChars(passwordChoices.length)]
 }
 return password;
@@ -73,7 +68,6 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
   
